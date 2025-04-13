@@ -1,0 +1,38 @@
+class Superhero:
+    def __init__(self, name, power, city):
+        self.name = name
+        self.power = power
+        self.city = city
+
+    def introduce(self):
+        return f"I am {self.name}, protector of {self.city}! 💥"
+
+    def use_power(self):
+        return f"{self.name} uses {self.power}!"
+
+
+class FlyingHero(Superhero):
+    def __init__(self, name, power, city, flight_speed):
+        super().__init__(name, power, city)
+        self.flight_speed = flight_speed
+
+    def use_power(self):
+        return f"{self.name} flies through the sky at {self.flight_speed} km/h using {self.power}! 🦅"
+
+
+class StrengthHero(Superhero):
+    def __init__(self, name, power, city, strength_level):
+        super().__init__(name, power, city)
+        self.strength_level = strength_level
+
+    def use_power(self):
+        return f"{self.name} lifts heavy objects with strength level {self.strength_level}! 💪"
+
+
+hero1 = FlyingHero("SkySurge", "Wind Gust", "Metroville", 300)
+hero2 = StrengthHero("IronBulk", "Super Strength", "Bricktown", 95)
+
+print(hero1.introduce())
+print(hero1.use_power())
+print(hero2.introduce())
+print(hero2.use_power())
